@@ -1,0 +1,8 @@
+/.idea
+/.vscode
+.DS_Store
+/vendor
+*.log
+thinkphp
+.env
+node_modules
