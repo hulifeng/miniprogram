@@ -107,3 +107,25 @@ Route::group('/mock', function () {
     Route::rule('/workplace/radar', 'mock/radar', 'GET');
     Route::rule('/workplace/teams', 'mock/teams', 'GET');
 });
+
+// 心灵解读轮播管理
+Route::group('/heart/carousel', function () {
+    Route::rule('/', 'heart.carousel/list', 'GET');
+    Route::rule('/test', 'heart.carousel/test', 'GET');
+    Route::rule('/add', 'heart.carousel/add', 'GET');
+})->middleware(Jwt::class);
+
+// 心灵解读题库管理
+Route::group('/heart/question', function () {
+    Route::rule('/', 'heart.question/list', 'GET');
+    Route::rule('/', 'heart.question/delete', 'DELETE');
+})->middleware(Jwt::class);
+
+
+// 心灵解读分类管理
+Route::group('/heart/category', function () {
+    Route::rule('/', 'heart.category/list', 'GET');
+    Route::rule('/', 'heart.category/add', 'POST');
+    Route::rule('/:id', 'heart.category/update', 'PUT');
+    Route::rule('/', 'heart.category/delete', 'DELETE');
+})->middleware(Jwt::class);

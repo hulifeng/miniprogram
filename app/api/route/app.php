@@ -15,6 +15,9 @@ declare(strict_types=1);
 use think\facade\Route;
 
 Route::group('/', function () {
+    Route::get('/mason', function () {
+        return 11;
+    });
     Route::group('/upload', function () {
         Route::post('/file', 'upload/file');
     });
